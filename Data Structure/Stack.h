@@ -12,6 +12,7 @@ private:
 
 public:
 	Stack(int);
+	~Stack();
 	int __len__();
 	bool is_empty();
 	bool is_full();

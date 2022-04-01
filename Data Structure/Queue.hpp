@@ -9,22 +9,16 @@ Queue<T>::Queue(int n)
 }
 
 template<class T>
-int Queue<T>::__len__()
-{
-	return no;
-}
+Queue<T>::~Queue() { delete[] que }
 
 template<class T>
-bool Queue<T>::is_empty()
-{
-	return no <= 0;
-}
+int Queue<T>::__len__() { return no; }
 
 template<class T>
-bool Queue<T>::is_full()
-{
-	return no >= capacity;
-}
+bool Queue<T>::is_empty() { return no <= 0; }
+
+template<class T>
+bool Queue<T>::is_full() { return no >= capacity; }
 
 template<class T>
 void Queue<T>::enque(T value)
@@ -60,7 +54,7 @@ template<class T>
 T Queue<T>::peak()
 {
 	if (is_empty())
-		return -1;
+		return NULL;
 
 	return que[front];
 }
@@ -102,13 +96,7 @@ int Queue<T>::count(T value)
 }
 
 template<class T>
-bool Queue<T>::__contains__(T value)
-{
-	if (count(value) > 0)
-		return true;
-	else
-		return false;
-}
+bool Queue<T>::__contains__(T value) { return count(value) > 0; }
 
 template<class T>
 void Queue<T>::dump()

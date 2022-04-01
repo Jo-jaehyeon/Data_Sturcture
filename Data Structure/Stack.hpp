@@ -7,22 +7,16 @@ Stack<T>::Stack(int n)
 }
 
 template<class T>
-int Stack<T>::__len__() 
-{ 
-	return ptr; 
-}
+Stack<T>::~Stack() { delete[] stk; }
 
 template<class T>
-bool Stack<T>::is_empty() 
-{ 
-	return ptr <= 0; 
-}
+int Stack<T>::__len__() { return ptr; }
 
 template<class T>
-bool Stack<T>::is_full()
-{ 
-	return ptr >= capacity; 
-}
+bool Stack<T>::is_empty() { return ptr <= 0; }
+
+template<class T>
+bool Stack<T>::is_full() { return ptr >= capacity; }
 
 template<class T>
 void Stack<T>::push(T value)
@@ -47,7 +41,7 @@ template<class T>
 T Stack<T>::peak()
 {
 	if (is_empty())
-		return -1;
+		return NULL;
 
 	return stk[ptr - 1];
 }
@@ -83,13 +77,7 @@ int Stack<T>::count(T value)
 }
 
 template<class T>
-bool Stack<T>::__contains__(T value)
-{
-	if (count(value) > 0)
-		return true;
-	else
-		return false;
-}
+bool Stack<T>::__contains__(T value) { return count(value) > 0; }
 
 template<class T>
 void Stack<T>::dump()

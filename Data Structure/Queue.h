@@ -14,16 +14,17 @@ private:
 
 public:
 	Queue(int);
+	~Queue();
 	int __len__();
 	bool is_empty();
 	bool is_full();
-	void enque(T value);
+	void enque(T);
 	T deque();
 	T peak();
 	void clear();
-	int find(T value);
-	int count(T value);
-	bool __contains__(T value);
+	int find(T);
+	int count(T);
+	bool __contains__(T);
 	void dump();
 };
 
