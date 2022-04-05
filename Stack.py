@@ -13,23 +13,25 @@ class Stack:
         return self.stp <= 0                    # Stack이 비어있는지 확인
 
     def is_full(self) -> bool:
-        self.stp >= self.capacity               # Stack이 가득 찼는지 확인
+        return self.stp >= self.capacity               # Stack이 가득 찼는지 확인
     
     def push(self, value) -> None:
         if self.is_full():                      # 꽉 찼다면 함수 종료
-            pass
+            return
+
         self.stk[self.stp] = value              # Stack이 가득 차 있지 않다면 꼭대기에 data 저장
         self.stp += 1                           # Stack Pointer +1
     
     def pop(self) -> Any:
         if self.is_empty():                     # 비어있다면 함수 종료
-            pass
+            return
+
         self.stp -= 1                           # 비어있지 않다면 Stack Pointer -1
         return self.stk[self.stp]               # 꼭대기에 있는 data 반환
     
     def peek(self) -> Any:
         if self.is_empty:                       # 비어있다면 함수 종료
-            pass
+            return
         return self.stk[self.stp-1]             # 비어있지 않다면 꼭대기에 있는 data 반환
     
     def clear(self):    

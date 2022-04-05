@@ -15,7 +15,7 @@ class Queue:
         return self.no <= 0                         # Queue가 비어있는지 확인
 
     def is_full(self) -> bool:
-        return self.no >= self.capacity                    # Queue가 가득 찼는지 확인
+        return self.no >= self.capacity             # Queue가 가득 찼는지 확인
     
     def enque(self, value) -> None:
         if self.is_full():                          # 꽉 찼다면 함수 종료
