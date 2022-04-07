@@ -20,6 +20,7 @@ public:
 	void replace(int, T);
 	void remove(int);
 	T at(int);
+	void show();
 };
 
 #include "Arrays.hpp"

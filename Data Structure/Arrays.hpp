@@ -10,7 +10,7 @@ template<class T>
 Arrays<T>::~Arrays() { delete[] arr; }
 
 template<class T>
-int Arrays<T>::__len__() { return capacity; }
+int Arrays<T>::__len__() { return size; }
 
 template<class T>
 bool Arrays<T>::is_full() { return size >= capacity; }
@@ -58,4 +58,17 @@ T Arrays<T>::at(int idx)
 		return NULL;
 	else
 		return arr[idx];
+}
+
+template<class T>
+void Arrays<T>::show()
+{
+	if (is_empty())
+		cout << "Array가 비어있습니다.";
+	else
+	{
+		for (int i = 0; i < size; i++)
+			cout << arr[i] << " ";
+		cout << endl;
+	}
 }

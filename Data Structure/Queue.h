@@ -25,8 +25,7 @@ public:
 	int find(T);
 	int count(T);
 	bool __contains__(T);
-	void dump();
+	void show();
 };
 
 #include "Queue.hpp"
-

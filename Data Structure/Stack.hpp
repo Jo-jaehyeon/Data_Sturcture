@@ -80,10 +80,10 @@ template<class T>
 bool Stack<T>::__contains__(T value) { return count(value) > 0; }
 
 template<class T>
-void Stack<T>::dump()
+void Stack<T>::show()
 {
 	if (is_empty())
-		cout << "스택이 비어있습니다." << endl;
+		cout << "Stack이 비어있습니다." << endl;
 	else
 	{
 		for (int i = 0; i < ptr; i++)

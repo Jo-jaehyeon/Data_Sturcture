@@ -99,10 +99,10 @@ template<class T>
 bool Queue<T>::__contains__(T value) { return count(value) > 0; }
 
 template<class T>
-void Queue<T>::dump()
+void Queue<T>::show()
 {
 	if (is_empty())
-		cout << "스택이 비어있습니다." << endl;
+		cout << "Queue가 비어있습니다." << endl;
 	else
 	{
 		for (int i = 0; i < no; i++)
